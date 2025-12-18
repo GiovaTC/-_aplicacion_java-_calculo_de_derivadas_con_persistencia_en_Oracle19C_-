@@ -24,5 +24,30 @@ public class DerivadaApp extends JFrame {
     }
 
     private void initUI() {
+        JPanel panel = new JPanel(new BorderLayout(10, 10));
+        panel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+
+        JLabel title = new JLabel(
+                "Derivada de f(x) = x³  →  f'(x) = 3x²",
+                JLabel.CENTER
+        );
+        title.setFont(new Font("Arial", Font.BOLD, 16));
+
+        outputArea = new JTextArea();
+        outputArea.setEditable(false);
+        outputArea.setFont(new Font("Consolas", Font.PLAIN, 14));
+
+        JButton calculateBtn = new JButton("Calcular y Registrar");
+
+        calculateBtn.addActionListener(e -> calcularYRegistrar());
+
+        panel.add(title, BorderLayout.NORTH);
+        panel.add(new JScrollPane(outputArea), BorderLayout.CENTER);
+        panel.add(calculateBtn, BorderLayout.SOUTH);
+
+        add(panel);
+    }
+
+    private void calcularYRegistrar() {
     }
 }
