@@ -65,5 +65,34 @@ public class DerivadaApp extends JFrame {
     }
 
     private void registrarEnOracle(double[] r) {
+        String sql = "{ CALL SP_GUARDAR_DERIVADA(?, ?, ?, ?, ?, ?, ?) }";
+
+        try (Connection conn = DriverManager.getConnection(
+                DB_URL, DB_USER, DB_PASSWORD);
+             CallableStatement stmt = conn.prepareCall(sql)) {
+
+            stmt.setString(1, "f(x) = x^3");
+            stmt.setDouble(2, r[0]);
+            stmt.setDouble(3, r[1]);
+            stmt.setDouble(4, r[2]);
+            stmt.setDouble(5, r[3]);
+            stmt.setDouble(6, r[4]);
+            stmt.setDouble(7, r[5]);
+
+            stmt.execute();
+
+            outputArea.append("\n✔ Resultados registrados en Oracle 19c");
+
+        } catch (Exception ex) {
+            outputArea.append(
+                    "\n✖ Error al registrar en BD:\n" + ex.getMessage()
+            );
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() ->
+                new DerivadaApp().setVisible(true)
+        );
     }
 }
