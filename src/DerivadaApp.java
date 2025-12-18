@@ -49,5 +49,21 @@ public class DerivadaApp extends JFrame {
     }
 
     private void calcularYRegistrar() {
+        int[] valoresX = {-3, -2, -1, 1, 2, 3};
+        double[] resultados = new double[6];
+
+        outputArea.setText("");
+
+        for (int i = 0; i < valoresX.length; i++) {
+            resultados[i] = 3 * Math.pow(valoresX[i], 2);   
+            outputArea.append(
+                    "f'(" + valoresX[i] + ") = " + resultados[i] + "\n"
+            );
+        }
+        
+        registrarEnOracle(resultados);
+    }
+
+    private void registrarEnOracle(double[] r) {
     }
 }
