@@ -3,6 +3,8 @@
 
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/a5b7ef47-23f8-4a4c-9f9d-2a5719495457" />  
 
+<img width="2550" height="1079" alt="image" src="https://github.com/user-attachments/assets/b3319506-d821-4b79-a3cc-7434c62e82f7" />        
+
 Solución completa, profesional y lista para ejecutar en **IntelliJ IDEA**, que cumple exactamente con los siguientes requerimientos:
 
 * Aplicación Java con **interfaz gráfica (Swing)**
