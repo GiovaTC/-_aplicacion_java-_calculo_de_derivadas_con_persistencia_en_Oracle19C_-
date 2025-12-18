@@ -1,15 +1,28 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class DerivadaApp {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import javax.swing.*;
+import java.awt.*;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+public class DerivadaApp extends JFrame {
+
+    private JTextArea outputArea;
+
+    // ajuste de conexion oracle 19c
+    private static final String DB_URL =
+            "jdbc:oracle:thin:@//localhost:1521/orcl";
+    private static final String DB_USER = "system";
+    private static final String DB_PASSWORD = "Tapiero123";
+
+    public DerivadaApp() {
+        setTitle("Cálculo de Derivada - Registro Oracle 19c");
+        setSize(520, 380);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);    
+        setLocationRelativeTo(null);
+        
+        initUI();
+    }
+
+    private void initUI() {
     }
 }
